@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://crvlr05y8n3s0"]
+
+[ext_resource type="Texture2D" uid="uid://dmnig51k4wa04" path="res://test_texture.png" id="1_64y60"]
+[ext_resource type="PackedScene" uid="uid://chixvsuyo1t5s" path="res://player.tscn" id="2_h3ev4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pdeyo"]
+size = Vector2(1154.75, 147)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64eni"]
+size = Vector2(129.75, 450.5)
+
+[node name="Node" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_64y60")
+stretch_mode = 1
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_h3ev4")]
+position = Vector2(204, 73)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(572, 229)
+shape = SubResource("RectangleShape2D_pdeyo")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(61, 77)
+shape = SubResource("RectangleShape2D_64eni")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1086, 68)
+shape = SubResource("RectangleShape2D_64eni")
