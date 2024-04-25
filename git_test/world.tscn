@@ -24,6 +24,13 @@ stretch_mode = 1
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_h3ev4")]
 position = Vector2(204, 73)
 
+[node name="Button" type="Button" parent="CharacterBody2D"]
+offset_left = 107.0
+offset_top = -120.0
+offset_right = 216.0
+offset_bottom = -78.0
+text = "quit to menu"
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
@@ -37,3 +44,5 @@ shape = SubResource("RectangleShape2D_64eni")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1086, 68)
 shape = SubResource("RectangleShape2D_64eni")
+
+[connection signal="pressed" from="CharacterBody2D/Button" to="CharacterBody2D" method="_on_button_pressed"]
